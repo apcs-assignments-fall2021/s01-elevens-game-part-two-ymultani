@@ -24,16 +24,22 @@ public class ElevensBoard extends Board {
     // returns true if **any** two of the given cards adds up to exactly 11
     // and false otherwise
     public boolean containsPairSum11(ArrayList<Integer> cardIndexes) {
-        // YOUR CODE HERE
+        for(int i = 0; i< cardIndexes.size(); i++){
+            for(int j = i+1; j<cardIndexes.size(); j++){
+                if(cardAt(cardIndexes.get(i)).getPointValue()+ cardAt(cardIndexes.get(j)).getPointValue() == 11){
+                    return true;
+                }
+            }
+        }
         return false;
+
     }
 
     // Given a list of the **indexes** of some cards on the board,
     // returns true if there is at least 1 Jack, at least 1 Queen, and at least 1 King
     // amongst the selected cards, and false otherwise
     public boolean containsJQK(ArrayList<Integer> cardIndexes) {
-        // YOUR CODE HERE
-        return false;
+        if(this.)
     }
 
     // Determine if there are any legal plays left on the board.
