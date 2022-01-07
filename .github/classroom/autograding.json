@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "testContainsPairSum11",
+      "setup": "",
+      "run": "./gradlew clean test --tests MyTests.testContainsPairSum11",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "testContainsJQK",
+      "setup": "",
+      "run": "./gradlew clean test --tests MyTests.testContainsJQK",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "testAnotherPlayIsPossible",
+      "setup": "",
+      "run": "./gradlew clean test --tests MyTests.testAnotherPlayIsPossible",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "testIsLegal",
+      "setup": "",
+      "run": "./gradlew clean test --tests MyTests.testIsLegal",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
