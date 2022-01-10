@@ -39,7 +39,14 @@ public class ElevensBoard extends Board {
     // returns true if there is at least 1 Jack, at least 1 Queen, and at least 1 King
     // amongst the selected cards, and false otherwise
     public boolean containsJQK(ArrayList<Integer> cardIndexes) {
-        if(this.)
+        ArrayList<String> cards_list = new ArrayList<String>();
+        for(int i = 0; i < cardIndexes.size(); i++){
+            cards_list.add(cardAt(cardIndexes.get(i)).getRank());
+        }
+        if(cards_list.contains("jack") && cards_list.contains("queen") && cards_list.contains("king")){
+            return true;
+        }
+        return false;
     }
 
     // Determine if there are any legal plays left on the board.
@@ -50,10 +57,7 @@ public class ElevensBoard extends Board {
     public boolean anotherPlayIsPossible() {
         // allCards is a list of the indexes of all cards on the board
         ArrayList<Integer> allCards = getAllCardIndexes();
-
-        // YOUR CODE HERE
-        // Just 1-2 lines of code needed
-        return false;
+        return (containsPairSum11(allCards) || containsJQK(allCards));
     }
 
     // Determines if the selected cards form a valid group for removal. In Elevens,
@@ -61,7 +65,12 @@ public class ElevensBoard extends Board {
     // (2) a group of three cards consisting of a jack, a queen, and a king in some order
     @Override
     public boolean isLegal(ArrayList<Integer> selectedCards) {
-        // YOUR CODE HERE
+        if(selectedCards.size() == 2 && (cardAt(selectedCards.get(0)).getPointValue() + cardAt(selectedCards.get(1)).getPointValue() == 11 )){
+            return true;
+        }
+        if(selectedCards.size() == 3 && (containsJQK(selectedCards))){
+            return true;
+        }
         return false;
     }
 }
